@@ -1,6 +1,12 @@
 # todo_app
 
-A new Flutter application.
+Todo App with sqflite.
+
+# screenshots
+
+<img src="https://github.com/MustafaOzer20/todo-app-flutter/blob/master/screenshots/home_screen.png" width="200" height="400">
+<img src="https://github.com/MustafaOzer20/todo-app-flutter/blob/master/screenshots/task_screen.png" width="200" height = "400">
+
 
 ## Getting Started
 
