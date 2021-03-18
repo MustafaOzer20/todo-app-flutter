@@ -4,8 +4,8 @@ Todo App with sqflite.
 
 # screenshots
 
-<img src="https://github.com/MustafaOzer20/todo-app-flutter/blob/master/screenshots/home_screen.png" width="220" height="500">
-<img src="https://github.com/MustafaOzer20/todo-app-flutter/blob/master/screenshots/task_screen.png" width="220" height = "500">
+<img src="https://github.com/MustafaOzer20/todo-app-flutter/blob/master/screenshots/home_screen.png" width="250" height="445">
+<img src="https://github.com/MustafaOzer20/todo-app-flutter/blob/master/screenshots/task_screen.png" width="250" height = "445">
 
 
 ## Getting Started
