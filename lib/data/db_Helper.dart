@@ -51,6 +51,11 @@ class DbHelper{
     await _db.rawUpdate("UPDATE todo SET isDone = '$isDone' WHERE id = '$id'");
   }
 
+  Future<void> deleteTodo(int id) async{
+    Database _db = await database();
+    await _db.rawDelete("DELETE FROM todo where id = '$id'");
+  }
+
   Future<List<Task>> getTasks() async{
     Database _db = await database();
     List<Map<String, dynamic>> taskMap = await _db.query('tasks');

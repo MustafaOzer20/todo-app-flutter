@@ -131,21 +131,36 @@ class _TaskScreenState extends State<TaskScreen> {
                           child: ListView.builder(
                             itemCount: snapshot.data.length,
                             itemBuilder: (context, index) {
-                              return GestureDetector(
-                                onTap: () async {
-                                  if(snapshot.data[index].isDone == 0){
-                                    await _dbHelper.updateTodoDone(snapshot.data[index].id, 1);
-                                  } else {
-                                    await _dbHelper.updateTodoDone(snapshot.data[index].id, 0);
-                                  }
-                                  setState(() {});
-                                },
-                                child: TodoWidget(
-                                  text: snapshot.data[index].title,
-                                  isDone: snapshot.data[index].isDone == 0
-                                      ? false
-                                      : true,
-                                ),
+                              return Row(
+                                children: [
+                                  Expanded(
+                                    child: GestureDetector(
+                                      onTap: () async {
+                                        if(snapshot.data[index].isDone == 0){
+                                          await _dbHelper.updateTodoDone(snapshot.data[index].id, 1);
+                                        } else {
+                                          await _dbHelper.updateTodoDone(snapshot.data[index].id, 0);
+                                        }
+                                        setState(() {});
+                                      },
+                                      child: TodoWidget(
+                                        text: snapshot.data[index].title,
+                                        isDone: snapshot.data[index].isDone == 0
+                                            ? false
+                                            : true,
+                                      ),
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                      onTap:()async{
+                                        print(5);
+                                        await _dbHelper.deleteTodo(snapshot.data[index].id).then((value){
+                                          setState(() {});
+                                        });
+                                      },
+                                      child: Icon(Icons.delete,color: Colors.red,size: 20.0,)
+                                  )
+                                ],
                               );
                             },
                           ),
